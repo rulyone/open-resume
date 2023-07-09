@@ -20,8 +20,8 @@ export const ResumePDFProfile = ({
   themeColor: string;
   isPDF: boolean;
 }) => {
-  const { name, email, phone, url, summary, location } = profile;
-  const iconProps = { email, phone, location, url };
+  const { name, email, phone, url, summary, location, url_github, url_linkedin } = profile;
+  const iconProps = { email, phone, location, url, url_github, url_linkedin };
 
   return (
     <ResumePDFSection style={{ marginTop: spacing["4"] }}>
@@ -52,11 +52,13 @@ export const ResumePDFProfile = ({
             }
           }
 
-          const shouldUseLinkWrapper = ["email", "url", "phone"].includes(key);
+          const shouldUseLinkWrapper = ["email", "url", "url_github", "url_linkedin", "phone"].includes(key);
           const Wrapper = ({ children }: { children: React.ReactNode }) => {
             if (!shouldUseLinkWrapper) return <>{children}</>;
 
             let src = "";
+            const https_regexp = /^https?:\/\//
+
             switch (key) {
               case "email": {
                 src = `mailto:${value}`;
@@ -67,10 +69,10 @@ export const ResumePDFProfile = ({
                 break;
               }
               default: {
-                src = value.startsWith("http") ? value : `https://${value}`;
+                src = `https://${value.replace(https_regexp, "")}`;
               }
             }
-
+            
             return (
               <ResumePDFLink src={src} isPDF={isPDF}>
                 {children}

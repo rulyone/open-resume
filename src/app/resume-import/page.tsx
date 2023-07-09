@@ -21,7 +21,7 @@ export default function ImportResume() {
         {!hasUsedAppBefore ? (
           <>
             <h1 className="text-lg font-semibold text-gray-900">
-              Import data from an existing resume
+              Importar datos desde un CV
             </h1>
             <ResumeDropzone
               onFileUrlChange={onFileUrlChange}
@@ -31,8 +31,8 @@ export default function ImportResume() {
               <>
                 <OrDivider />
                 <SectionWithHeadingAndCreateButton
-                  heading="Don't have a resume yet?"
-                  buttonText="Create from scratch"
+                  heading="No tienes un CV aún?"
+                  buttonText="Crealo desde cero"
                 />
               </>
             )}
@@ -42,14 +42,14 @@ export default function ImportResume() {
             {!hasAddedResume && (
               <>
                 <SectionWithHeadingAndCreateButton
-                  heading="You have data saved in browser from prior session"
-                  buttonText="Continue where I left off"
+                  heading="Tienes datos guardados de una sesión anterior"
+                  buttonText="Continuar desde donde quedé"
                 />
                 <OrDivider />
               </>
             )}
             <h1 className="font-semibold text-gray-900">
-              Override data with a new resume
+              Sobreescribir data con un nuevo CV
             </h1>
             <ResumeDropzone
               onFileUrlChange={onFileUrlChange}

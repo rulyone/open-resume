@@ -28,7 +28,7 @@ export const CustomForm = () => {
       <div className="col-span-full grid grid-cols-6 gap-3">
         <div className="relative col-span-full">
           <BulletListTextarea
-            label="Custom Textbox"
+            label="Texto Custom"
             labelClassName="col-span-full"
             name="descriptions"
             placeholder="Bullet points"

@@ -28,7 +28,7 @@ const FEATURES = [
       <>
         OpenResume is an open-source project, and its source code can be viewed
         by anyone on its{" "}
-        <Link href="https://github.com/xitanggg/open-resume">
+        <Link href="https://github.com/rulyone/open-resume">
           GitHub repository
         </Link>
       </>

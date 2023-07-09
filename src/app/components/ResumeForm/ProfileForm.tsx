@@ -7,7 +7,7 @@ import { ResumeProfile } from "lib/redux/types";
 export const ProfileForm = () => {
   const profile = useAppSelector(selectProfile);
   const dispatch = useAppDispatch();
-  const { name, email, phone, url, summary, location } = profile;
+  const { name, email, phone, url, summary, location, url_github, url_linkedin } = profile;
 
   const handleProfileChange = (field: keyof ResumeProfile, value: string) => {
     dispatch(changeProfile({ field, value }));
@@ -17,18 +17,18 @@ export const ProfileForm = () => {
     <BaseForm>
       <div className="grid grid-cols-6 gap-3">
         <Input
-          label="Name"
+          label="Nombre"
           labelClassName="col-span-full"
           name="name"
-          placeholder="Sal Khan"
+          placeholder="Juan Perez"
           value={name}
           onChange={handleProfileChange}
         />
         <Textarea
-          label="Objective"
+          label="Resumen"
           labelClassName="col-span-full"
           name="summary"
-          placeholder="Entrepreneur and educator obsessed with making education free for anyone"
+          placeholder="Emprendedor y educador obsesionado con hacer que la educación sea accesible para todos."
           value={summary}
           onChange={handleProfileChange}
         />
@@ -36,15 +36,15 @@ export const ProfileForm = () => {
           label="Email"
           labelClassName="col-span-4"
           name="email"
-          placeholder="hello@khanacademy.org"
+          placeholder="juanperez@fullstackarchitect.dev"
           value={email}
           onChange={handleProfileChange}
         />
         <Input
-          label="Phone"
+          label="Teléfono"
           labelClassName="col-span-2"
           name="phone"
-          placeholder="(123)456-7890"
+          placeholder="+56999999999"
           value={phone}
           onChange={handleProfileChange}
         />
@@ -52,18 +52,35 @@ export const ProfileForm = () => {
           label="Website"
           labelClassName="col-span-4"
           name="url"
-          placeholder="linkedin.com/in/khanacademy"
+          placeholder="https://resume.fullstackarchitect.dev"
           value={url}
           onChange={handleProfileChange}
         />
         <Input
-          label="Location"
+          label="Ubicación"
           labelClassName="col-span-2"
           name="location"
-          placeholder="NYC, NY"
+          placeholder="Santiago, Chile"
           value={location}
           onChange={handleProfileChange}
         />
+        <Input
+          label="Git Projects"
+          labelClassName="col-span-3"
+          name="url_github"
+          placeholder="https://github.com/username"
+          value={url_github}
+          onChange={handleProfileChange}
+        />
+        <Input
+          label="Linkedin"
+          labelClassName="col-span-3"
+          name="url_linkedin"
+          placeholder="https://www.linkedin.com/in/user_profile/"
+          value={url_linkedin}
+          onChange={handleProfileChange}
+        />
+
       </div>
     </BaseForm>
   );

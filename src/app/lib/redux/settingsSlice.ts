@@ -54,11 +54,11 @@ export const initialSettings: Settings = {
     custom: false,
   },
   formToHeading: {
-    workExperiences: "WORK EXPERIENCE",
-    educations: "EDUCATION",
-    projects: "PROJECT",
-    skills: "SKILLS",
-    custom: "CUSTOM SECTION",
+    workExperiences: "EXPERIENCIA LABORAL",
+    educations: "EDUCACIÓN",
+    projects: "PROYECTOS",
+    skills: "HABILIDADES",
+    custom: "CUSTOM",
   },
   formsOrder: ["workExperiences", "educations", "projects", "skills", "custom"],
   showBulletPoints: {

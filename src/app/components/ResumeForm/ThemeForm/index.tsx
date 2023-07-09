@@ -33,7 +33,7 @@ export const ThemeForm = () => {
         <div className="flex items-center gap-2">
           <Cog6ToothIcon className="h-6 w-6 text-gray-600" aria-hidden="true" />
           <h1 className="text-lg font-semibold tracking-wide text-gray-900 ">
-            Resume Setting
+            Configuración
           </h1>
         </div>
         <div>

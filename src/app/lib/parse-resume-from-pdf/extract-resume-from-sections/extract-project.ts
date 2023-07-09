@@ -19,7 +19,7 @@ import {
 export const extractProject = (sections: ResumeSectionToLines) => {
   const projects: ResumeProject[] = [];
   const projectsScores = [];
-  const lines = getSectionLinesByKeywords(sections, ["project"]);
+  const lines = getSectionLinesByKeywords(sections, ["project", "proyecto"]);
   const subsections = divideSectionIntoSubsections(lines);
 
   for (const subsectionLines of subsections) {

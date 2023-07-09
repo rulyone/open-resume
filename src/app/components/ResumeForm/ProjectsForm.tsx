@@ -14,7 +14,7 @@ export const ProjectsForm = () => {
   const showDelete = projects.length > 1;
 
   return (
-    <Form form="projects" addButtonText="Add Project">
+    <Form form="projects" addButtonText="Agregar Proyecto">
       {projects.map(({ project, date, descriptions }, idx) => {
         const handleProjectChange = (
           ...[
@@ -39,7 +39,7 @@ export const ProjectsForm = () => {
           >
             <Input
               name="project"
-              label="Project Name"
+              label="Nombre de Proyecto"
               placeholder="OpenResume"
               value={project}
               onChange={handleProjectChange}
@@ -47,15 +47,15 @@ export const ProjectsForm = () => {
             />
             <Input
               name="date"
-              label="Date"
-              placeholder="Winter 2022"
+              label="Fecha"
+              placeholder="Invierno 2022"
               value={date}
               onChange={handleProjectChange}
               labelClassName="col-span-2"
             />
             <BulletListTextarea
               name="descriptions"
-              label="Description"
+              label="Descripción"
               placeholder="Bullet points"
               value={descriptions}
               onChange={handleProjectChange}

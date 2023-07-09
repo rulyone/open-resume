@@ -14,22 +14,22 @@ import { ResumeParserAlgorithmArticle } from "resume-parser/ResumeParserAlgorith
 
 const RESUME_EXAMPLES = [
   {
-    fileUrl: "resume-example/laverne-resume.pdf",
+    fileUrl: "resume-example/openresume-resume.pdf",
     description: (
       <span>
-        Borrowed from University of La Verne Career Center -{" "}
-        <Link href="https://laverne.edu/careers/wp-content/uploads/sites/15/2010/12/Undergraduate-Student-Resume-Examples.pdf">
-          Link
-        </Link>
+        Creado con OpenResume resume builder -{" "}
+        <Link href="/resume-builder">Link</Link>
       </span>
     ),
   },
   {
-    fileUrl: "resume-example/openresume-resume.pdf",
+    fileUrl: "resume-example/laverne-resume.pdf",
     description: (
       <span>
-        Created with OpenResume resume builder -{" "}
-        <Link href="/resume-builder">Link</Link>
+        Prestado del Centro de Carreras de la Universidad de La Verne -{" "}
+        <Link href="https://laverne.edu/careers/wp-content/uploads/sites/15/2010/12/Undergraduate-Student-Resume-Examples.pdf">
+          Link
+        </Link>
       </span>
     ),
   },
@@ -66,12 +66,12 @@ export default function ResumeParser() {
           <FlexboxSpacer maxWidth={45} className="hidden md:block" />
           <section className="max-w-[600px] grow">
             <Heading className="text-primary !mt-4">
-              Resume Parser Playground
+              CV Parser Playground
             </Heading>
             <Paragraph smallMarginTop={true}>
-              This playground showcases the OpenResume resume parser and its
-              ability to parse information from a resume PDF. Click around the
-              PDF examples below to observe different parsing results.
+              Este playground demuestra el resume parser de OpenResume y 
+              su habilidad de analizar información de un CV en formato PDF. 
+              Clickea los ejemplos PDF de abajo para observar diferentes resultados de su análisis.
             </Paragraph>
             <div className="mt-3 flex gap-3">
               {RESUME_EXAMPLES.map((example, idx) => (
@@ -90,7 +90,7 @@ export default function ResumeParser() {
                   }}
                   tabIndex={0}
                 >
-                  <h1 className="font-semibold">Resume Example {idx + 1}</h1>
+                  <h1 className="font-semibold">Ejemplo de CV {idx + 1}</h1>
                   <p className="mt-2 text-sm text-gray-500">
                     {example.description}
                   </p>
@@ -98,13 +98,14 @@ export default function ResumeParser() {
               ))}
             </div>
             <Paragraph>
-              You can also{" "}
-              <span className="font-semibold">add your resume below</span> to
-              access how well your resume would be parsed by similar Application
-              Tracking Systems (ATS) used in job applications. The more
-              information it can parse out, the better it indicates the resume
-              is well formatted and easy to read. It is beneficial to have the
-              name and email accurately parsed at the very least.
+              También puedes{" "}
+              <span className="font-semibold">agregar tu CV debajo </span>
+              para saber cómo será analizado por sistemas de postulación de CV 
+              automáticos (Application Tracking Systems - ATS) utilizado por distintas empresas
+              de reclutamiento.
+              Mientras más información pueda ser analizada, mejor es el indicador que el CV 
+              está bien formateado y fácil de leer. Es de beneficio que el nombre y email al menos 
+              puedan ser analizados.
             </Paragraph>
             <div className="mt-3">
               <ResumeDropzone
@@ -115,14 +116,14 @@ export default function ResumeParser() {
               />
             </div>
             <Heading level={2} className="!mt-[1.2em]">
-              Resume Parsing Results
+              Resultados de Análisis de CV
             </Heading>
             <ResumeTable resume={resume} />
-            <ResumeParserAlgorithmArticle
+            {/* <ResumeParserAlgorithmArticle
               textItems={textItems}
               lines={lines}
               sections={sections}
-            />
+            /> */}
             <div className="pt-24" />
           </section>
         </div>

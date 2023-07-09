@@ -9,64 +9,66 @@ import { deepClone } from "lib/deep-clone";
 
 export const END_HOME_RESUME: Resume = {
   profile: {
-    name: "John Doe",
+    name: "Juan Perez",
     summary:
-      "Software engineer obsessed with building exceptional products that people love",
-    email: "hello@openresume.com",
-    phone: "123-456-7890",
-    location: "NYC, NY",
-    url: "linkedin.com/in/john-doe",
+      "Ingeniero obsesionado en la construcción e implementación de productos que la gente ame!",
+    email: "juanperez@fullstackarchitect.dev",
+    phone: "56-99-9999999",
+    location: "Santiago, Chile",
+    url: "resume.fullstackarchitect.dev",
+    url_github: "github.com/username",
+    url_linkedin: "linkedin.com/in/user_profile"
   },
   workExperiences: [
     {
-      company: "ABC Company",
-      jobTitle: "Software Engineer",
-      date: "May 2023 - Present",
+      company: "Empresa Ejemplar",
+      jobTitle: "Ingeniero de Software",
+      date: "May 2023 - Presente",
       descriptions: [
-        "Lead a cross-functional team of 5 engineers in developing a search bar, which enables thousands of daily active users to search content across the entire platform",
-        "Create stunning home page product demo animations that drives up sign up rate by 20%",
-        "Write clean code that is modular and easy to maintain while ensuring 100% test coverage",
+        "Liderar un equipo multi-funcional de 6 ingenieros a desarrollar una aplicación de juntas para usuarios de la plataforma de reddit",
+        "Crear una aplicación web para organizar torneos de futbol entre clubes informales a lo largo del país",
+        "Escribir código estructurado e impecable que es modular y fácil de mantener asegurando un test coverage del 100%"
       ],
     },
     {
-      company: "DEF Organization",
-      jobTitle: "Software Engineer Intern",
-      date: "Summer 2022",
+      company: "Fundación RD",
+      jobTitle: "Practicante de Ingeniero Informático",
+      date: "Verano 2022",
       descriptions: [
-        "Re-architected the existing content editor to be mobile responsive that led to a 10% increase in mobile user engagement",
-        "Created a progress bar to help users track progress that drove up user retention by 15%",
-        "Discovered and fixed 5 bugs in the existing codebase to enhance user experience",
+        "Rediseño del editor de contenido para que sea responsive en dispositivos móviles que generó un aumento del 10% de usuarios de la aplicación",
+        "Crear una barra de progreso para mejorar la experiencia de usuario que aumentó la retención de un 15% de usuarios en el proceso",
+        "Detectar y arreglar 5 bugs en el código existente, consiguiendo así evitar pérdidas mayores de los recursos obtenidos"
       ],
     },
     {
-      company: "XYZ University",
-      jobTitle: "Research Assistant",
-      date: "Summer 2021",
+      company: "Universidad 31 Minutos",
+      jobTitle: "Asistente de Investigación",
+      date: "Verano 2021",
       descriptions: [
-        "Devised a new NLP algorithm in text classification that results in 10% accuracy increase",
-        "Compiled and presented research findings to a group of 20+ faculty and students",
+        "Idear un algoritmo NLP para clasificación de texto que resultó en un 10% de incremento de precisión",
+        "Compilar y presentar resultados de investigación a un grupo de 20+ académicos y estudiantes"
       ],
     },
   ],
   educations: [
     {
-      school: "XYZ University",
-      degree: "Bachelor of Science in Computer Science",
+      school: "Universidad 31 Minutos",
+      degree: "Ingeniería en Computación e Informática",
       date: "Sep 2019 - May 2023",
-      gpa: "3.8",
+      gpa: "6.8",
       descriptions: [
-        "Won 1st place in 2022 Education Hackathon, 2nd place in 2023 Health Tech Competition",
-        "Teaching Assistant for Programming for the Web (2022 - 2023)",
-        "Coursework: Object-Oriented Programming (A+), Programming for the Web (A+), Cloud Computing (A), Introduction to Machine Learning (A-), Algorithms Analysis (A-)",
+        "Obtener 1er lugar en la Hackaton the Educación el 2022, 2do lugar en la Competencia de Fintech 2023",
+        "Ayudante de profesor para el ramo Lenguajes de Programación (2022 - 2023)",
       ],
     },
   ],
   projects: [
     {
       project: "OpenResume",
-      date: "Spring 2023",
+      date: "Primavera 2023",
       descriptions: [
-        "Created and launched a free resume builder web app that allows thousands of users to create professional resume easily and land their dream jobs",
+        "Modificaciones y Hosting de OpenResume para que miles de profesionales puedan crear sus CV de forma simple y así puedan lograr sus sueños",
+        "Creada aplicación de Inteligencia Artificial Generativa para crear una aplicación que transforma tus dibujos en obras de arte"
       ],
     },
   ],
@@ -80,8 +82,8 @@ export const END_HOME_RESUME: Resume = {
       { skill: "C++", rating: 2 },
     ],
     descriptions: [
-      "Tech: React Hooks, GraphQL, Node.js, SQL, Postgres, NoSql, Redis, REST API, Git",
-      "Soft: Teamwork, Creative Problem Solving, Communication, Learning Mindset, Agile",
+      "Tecnologías: React Hooks, GraphQL, Node.js, SQL, Postgres, NoSql, Redis, REST API, Git",
+      "Habilidades Blandas: Trabajo en equipo, Solución creativa de problemas, Comunicación, Mentalidad de aprendizaje, Metodologías Agiles",
     ],
   },
   custom: {

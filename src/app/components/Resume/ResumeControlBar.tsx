@@ -1,4 +1,4 @@
-"use client";
+//"use client";
 import { useEffect } from "react";
 import { useSetDefaultScale } from "components/Resume/hooks";
 import {
@@ -65,7 +65,7 @@ const ResumeControlBarComponent = ({
         download={fileName}
       >
         <ArrowDownTrayIcon className="h-4 w-4" />
-        <span className="whitespace-nowrap">Download Resume</span>
+        <span className="whitespace-nowrap">Descargar CV</span>
       </a>
     </div>
   );

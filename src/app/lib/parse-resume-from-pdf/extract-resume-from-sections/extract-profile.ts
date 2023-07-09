@@ -25,13 +25,15 @@ const hasAt = (item: TextItem) => item.text.includes("@");
 // Phone
 // Simple phone regex that matches (xxx)-xxx-xxxx where () and - are optional, - can also be space
 export const matchPhone = (item: TextItem) =>
-  item.text.match(/\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}/);
+  //item.text.match(/\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}/);
+  item.text.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
 const hasParenthesis = (item: TextItem) => /[()]/.test(item.text);
 
 // Location
 // Simple location regex that matches "<City>, <ST>"
 export const matchCityAndState = (item: TextItem) =>
-  item.text.match(/[A-Z][a-zA-Z\s]+, [A-Z]{2}/);
+  //item.text.match(/[A-Z][a-zA-Z\s]+, [A-Z]{2}/);
+  item.text.match(/[A-Z][a-zA-Z\s]+, [A-Z][a-zA-Z\s]+/);
 
 // Url
 // Simple url regex that matches "xxx.xxx/xxx" (xxx = anything not space)
@@ -146,17 +148,25 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
     textItems,
     URL_FEATURE_SETS
   );
+  const [url_github, urlGithubScores] = getTextWithHighestFeatureScore(
+    textItems,
+    URL_FEATURE_SETS
+  );
+  const [url_linkedin, urlLinkedinScores] = getTextWithHighestFeatureScore(
+    textItems,
+    URL_FEATURE_SETS
+  )
   const [summary, summaryScores] = getTextWithHighestFeatureScore(
     textItems,
     SUMMARY_FEATURE_SETS
   );
 
-  const summaryLines = getSectionLinesByKeywords(sections, ["summary"]);
+  const summaryLines = getSectionLinesByKeywords(sections, ["summary", "resumen"]);
   const summarySection = summaryLines
     .flat()
     .map((textItem) => textItem.text)
     .join(" ");
-  const objectiveLines = getSectionLinesByKeywords(sections, ["objective"]);
+  const objectiveLines = getSectionLinesByKeywords(sections, ["objective", "resumen"]);
   const objectiveSection = objectiveLines
     .flat()
     .map((textItem) => textItem.text)
@@ -169,6 +179,8 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
       phone,
       location,
       url,
+      url_github,
+      url_linkedin,
       // Dedicated section takes higher precedence over profile summary
       summary: summarySection || objectiveSection || summary,
     },
@@ -179,6 +191,8 @@ export const extractProfile = (sections: ResumeSectionToLines) => {
       phone: phoneScores,
       location: locationScores,
       url: urlScores,
+      urlGithub: urlGithubScores,
+      urlLinkedin: urlLinkedinScores,
       summary: summaryScores,
     },
   };

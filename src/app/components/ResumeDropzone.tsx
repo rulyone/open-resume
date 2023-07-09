@@ -111,11 +111,11 @@ export const ResumeDropzone = ({
                 !playgroundView && "text-lg font-semibold"
               )}
             >
-              Browse a pdf file or drop it here
+              Busque un archivo pdf o arrastrelo aquí
             </p>
             <p className="flex text-sm text-gray-500">
               <LockClosedIcon className="mr-1 mt-1 h-3 w-3 text-gray-400" />
-              File data is used locally and never leaves your browser
+              La información del archivo es usada localmente en tu navegador y nunca transferida a terceros
             </p>
           </>
         ) : (
@@ -142,7 +142,7 @@ export const ResumeDropzone = ({
                   playgroundView ? "border" : "bg-primary"
                 )}
               >
-                Browse file
+                Buscar archivo
                 <input
                   type="file"
                   className="sr-only"
@@ -151,7 +151,7 @@ export const ResumeDropzone = ({
                 />
               </label>
               {hasNonPdfFile && (
-                <p className="mt-6 text-red-400">Only pdf file is supported</p>
+                <p className="mt-6 text-red-400">Solo archivos pdf son soportados</p>
               )}
             </>
           ) : (
@@ -162,12 +162,12 @@ export const ResumeDropzone = ({
                   className="btn-primary"
                   onClick={onImportClick}
                 >
-                  Import and Continue <span aria-hidden="true">→</span>
+                  Importar y Continuar <span aria-hidden="true">→</span>
                 </button>
               )}
               <p className={cx(" text-gray-500", !playgroundView && "mt-6")}>
-                Note: {!playgroundView ? "Import" : "Parser"} works best on
-                single column resume
+                Nota: {!playgroundView ? "Import" : "Parser"} funciona mejor con 
+                CVs de una sola columna
               </p>
             </>
           )}

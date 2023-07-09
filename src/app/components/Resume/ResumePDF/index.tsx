@@ -101,7 +101,7 @@ export const ResumePDF = ({
             ...styles.flexCol,
             color: DEFAULT_FONT_COLOR,
             fontFamily,
-            fontSize: fontSize + "pt",
+            fontSize: fontSize + "pt"
           }}
         >
           {Boolean(settings.themeColor) && (
